@@ -26,12 +26,10 @@ class GamePanel extends JPanel implements ActionListener {
     private final int B_WIDTH = 500;
     private final int B_HEIGHT = 400;
     private final int DOT_SIZE = 10;
-    private final int ALL_DOTS = 100;
-    private final int RAND_POS = 29;
-    private final int DELAY = 140;
+    private final int ALL_DOTS = 455;
 
-    private final int x[] = new int[ALL_DOTS];
-    private final int y[] = new int[ALL_DOTS];
+    private final int[] x = new int[ALL_DOTS];
+    private final int[] y = new int[ALL_DOTS];
 
     private int dots;
     private int apple_x;
@@ -65,6 +63,7 @@ class GamePanel extends JPanel implements ActionListener {
             y[z] = 150;
         }
         locateApple();
+        int DELAY = 140;
         timer = new Timer(DELAY, this);
         timer.start();
     }
@@ -161,6 +160,7 @@ class GamePanel extends JPanel implements ActionListener {
     }
 
     private void locateApple() {
+        int RAND_POS = 10;
         int r = random.nextInt(RAND_POS);
         apple_x = ((r * DOT_SIZE));
 
